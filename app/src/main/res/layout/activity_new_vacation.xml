@@ -1,0 +1,175 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".NewVacation">
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTripName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="@string/lblTripName"
+        android:maxLength="20" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDescription"
+        android:layout_below="@+id/txtTripName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="@string/lblDescription"
+        android:maxLines="3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/txtStartDate"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/txtDescription"
+        android:layout_toRightOf="@+id/lblStartDate"
+        android:layout_toEndOf="@+id/lblStartDate"
+        android:maxLength="10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/lblStartDate"
+        android:id="@+id/lblStartDate"
+        android:layout_alignBaseline="@+id/txtStartDate"
+        android:layout_alignBottom="@+id/txtStartDate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/lblEndDate"
+        android:id="@+id/lblEndDate"
+        android:layout_alignBaseline="@+id/txtEndDate"
+        android:layout_alignBottom="@+id/txtEndDate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/txtEndDate"
+        android:layout_below="@+id/txtStartDate"
+        android:layout_alignLeft="@+id/txtStartDate"
+        android:layout_alignStart="@+id/txtStartDate"
+        android:maxLength="10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblLongitude"
+        android:id="@+id/lblLongitude"
+        android:layout_above="@+id/lblLatitude"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblLatitude"
+        android:id="@+id/lblLatitude"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblZero"
+        android:id="@+id/lblLongitudeValue"
+        android:layout_alignTop="@+id/lblLongitude"
+        android:layout_alignLeft="@+id/lblLatitudeValue"
+        android:layout_alignStart="@+id/lblLatitudeValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblZero"
+        android:id="@+id/lblLatitudeValue"
+        android:layout_below="@+id/lblLongitudeValue"
+        android:layout_alignLeft="@+id/txtEndDate"
+        android:layout_alignStart="@+id/txtEndDate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblPauseGPS"
+        android:id="@+id/btnPauseGPS"
+        android:onClick="btnPauseGPSClicked"
+        android:layout_alignBaseline="@+id/lblLongitudeValue"
+        android:layout_alignBottom="@+id/lblLongitudeValue"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout2">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblCancel"
+            android:id="@+id/btnCancel"
+            android:layout_weight="1"
+            android:onClick="btnCancelClicked" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblConfirm"
+            android:id="@+id/btnAddVacation"
+            android:onClick="btnAddVacationConfirm"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choosePhoto"
+        android:id="@+id/choosePhotoBtn"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/btnPauseGPS"
+        android:layout_alignRight="@+id/linearLayout2"
+        android:layout_alignEnd="@+id/linearLayout2"
+        android:onClick="btnChoosePhotoClicked" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgPicture"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/choosePhotoBtn"
+        android:layout_toStartOf="@+id/choosePhotoBtn"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_below="@+id/lblLatitude"
+        android:nestedScrollingEnabled="false" />
+
+</RelativeLayout>

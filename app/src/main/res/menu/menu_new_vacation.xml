@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".NewVacation">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" android:visible="false" />
+
+    <item android:id="@+id/vacations" android:title="@string/vacations"  android:onClick="vacationsClicked"/>
+    <item android:id="@+id/bucketList" android:title="@string/bucket_list" android:onClick="bucketListClicked"/>
+    <item android:id="@+id/newBucketList" android:title="@string/new_bucket_list" android:onClick="newBucketListClicked"/>
+    <item android:id="@+id/newVacation" android:title="@string/new_vacation" android:onClick="newVacationClicked"/>
+</menu>
