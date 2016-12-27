@@ -50,7 +50,7 @@ public class NewBucketList extends VacationTracker {
 
     /**
      * return to bucket list and update
-     * @param v
+     * @param v view
      */
     public void btnAddBucketConfirm(View v){
         String tripName = txtTripName.getText().toString();
@@ -58,7 +58,7 @@ public class NewBucketList extends VacationTracker {
         String city = txtCity.getText().toString();
         String state = txtState.getText().toString();
         String country = txtCountry.getText().toString();
-        String pictureUri = imageUri.toString();
+        //String pictureUri = imageUri.toString();
 
         // make a new dto and set values
         BucketListDTO bucketListDTO = new BucketListDTO();
@@ -68,7 +68,8 @@ public class NewBucketList extends VacationTracker {
         bucketListDTO.setCity(city);
         bucketListDTO.setState(state);
         bucketListDTO.setCountry(country);
-        bucketListDTO.setPictureUri(pictureUri);
+        //12-27-2016 - comment this out for now. was crashing here
+        //bucketListDTO.setPictureUri(pictureUri);
 
         //insert the values into the database using the dao
         OfflineBucketListDAO offlineBucketListDAO = new OfflineBucketListDAO(this);
@@ -81,7 +82,7 @@ public class NewBucketList extends VacationTracker {
 
     /**
      * return to bucketlist without update
-     * @param v
+     * @param v view
      */
     public void btnCancelClicked(View v){
         Intent intent = new Intent(this, BucketList.class);
@@ -91,7 +92,7 @@ public class NewBucketList extends VacationTracker {
 
     /**
      * This sends the user to the gallery to choose a photo of their vacation.
-     * @param v
+     * @param v view
      */
     public void btnChoosePhotoClicked(View v){
         // invoke the image gallery using an implicit intent
@@ -153,7 +154,7 @@ public class NewBucketList extends VacationTracker {
 
     /**
      * returns the menu id for this activity
-     * @return
+     * @return id
      */
     @Override
     public int getCurrentMenuId() {
