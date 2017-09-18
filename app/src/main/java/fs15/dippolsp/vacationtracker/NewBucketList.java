@@ -53,12 +53,18 @@ public class NewBucketList extends VacationTracker {
      * @param v view
      */
     public void btnAddBucketConfirm(View v){
+        String pictureUri = null;
         String tripName = txtTripName.getText().toString();
         String description = txtDescription.getText().toString();
         String city = txtCity.getText().toString();
         String state = txtState.getText().toString();
         String country = txtCountry.getText().toString();
-        //String pictureUri = imageUri.toString();
+        try {
+            pictureUri = imageUri.toString();
+        }
+        catch(Exception e){
+            // do nothing
+        }
 
         // make a new dto and set values
         BucketListDTO bucketListDTO = new BucketListDTO();
@@ -69,7 +75,9 @@ public class NewBucketList extends VacationTracker {
         bucketListDTO.setState(state);
         bucketListDTO.setCountry(country);
         //12-27-2016 - comment this out for now. was crashing here
-        //bucketListDTO.setPictureUri(pictureUri);
+        if(pictureUri != null && !pictureUri.isEmpty()) {
+            bucketListDTO.setPictureUri(pictureUri);
+        }
 
         //insert the values into the database using the dao
         OfflineBucketListDAO offlineBucketListDAO = new OfflineBucketListDAO(this);

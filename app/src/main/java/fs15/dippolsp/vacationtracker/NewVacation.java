@@ -124,6 +124,7 @@ public class NewVacation extends VacationTracker implements GoogleApiClient.Conn
      * @param v
      */
     public void btnAddVacationConfirm(View v){
+        String pictureUri = null;
         // collect the strings from the textviews
         String tripName = txtTripName.getText().toString();
         String description = txtDescription.getText().toString();
@@ -131,7 +132,12 @@ public class NewVacation extends VacationTracker implements GoogleApiClient.Conn
         String endDate = txtEndDate.getText().toString();
         String longitude1 = String.valueOf(longitude);
         String latitude1 = String.valueOf(latitude);
-        String pictureUri = imageUri.toString();
+        try {
+            pictureUri = imageUri.toString();
+        }
+        catch(Exception e){
+            //do nothing
+        }
 
         // make a new DTO and set values
         VacationDTO vacationDTO = new VacationDTO();
@@ -142,7 +148,10 @@ public class NewVacation extends VacationTracker implements GoogleApiClient.Conn
         vacationDTO.setEndDate(endDate);
         vacationDTO.setLongitude(longitude1);
         vacationDTO.setLatitude(latitude1);
-        vacationDTO.setPictureUri(pictureUri);
+
+        if(pictureUri != null && !pictureUri.isEmpty()) {
+            vacationDTO.setPictureUri(pictureUri);
+        }
 
 
         //i cant get this to work quite yet
